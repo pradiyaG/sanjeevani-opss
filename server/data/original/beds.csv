@@ -1,0 +1,90 @@
+bed_id,ward,bed_type,occupancy,patient_id,admission_discharge_status
+ED-01,ED,Emergency,Occupied,P1001,Admitted
+ED-02,ED,Emergency,Occupied,P1002,Admitted
+ED-03,ED,Emergency,Occupied,P1003,Admitted
+ED-04,ED,Emergency,Occupied,P1004,Admitted
+ED-05,ED,Emergency,Occupied,P1005,Admitted
+ED-06,ED,Emergency,Occupied,P1006,Discharge pending
+ED-07,ED,Emergency,Occupied,P1007,Discharge pending
+ICU-01,ICU,ICU,Occupied,P1008,Admitted
+ICU-02,ICU,ICU,Occupied,P1009,Admitted
+ICU-03,ICU,ICU,Occupied,P1010,Admitted
+ICU-04,ICU,ICU,Occupied,P1011,Admitted
+ICU-05,ICU,ICU,Occupied,P1012,Admitted
+ICU-06,ICU,ICU,Occupied,P1013,Admitted
+ICU-07,ICU,ICU,Occupied,P1014,Admitted
+ICU-08,ICU,ICU,Occupied,P1015,Admitted
+ICU-09,ICU,ICU,Occupied,P1016,Admitted
+ICU-10,ICU,ICU,Occupied,P1017,Admitted
+ICU-11,ICU,ICU,Occupied,P1018,Admitted
+ICU-12,ICU,ICU,Occupied,P1019,Admitted
+GEN-A-01,General Ward A,General,Occupied,P1020,Discharge pending
+GEN-A-02,General Ward A,General,Occupied,P1021,Discharge pending
+GEN-A-03,General Ward A,General,Occupied,P1022,Admitted
+GEN-A-04,General Ward A,General,Occupied,P1023,Admitted
+GEN-A-05,General Ward A,General,Occupied,P1024,Admitted
+GEN-A-06,General Ward A,General,Occupied,P1025,Admitted
+GEN-A-07,General Ward A,General,Occupied,P1026,Admitted
+GEN-A-08,General Ward A,General,Occupied,P1027,Admitted
+GEN-A-09,General Ward A,General,Occupied,P1028,Admitted
+GEN-A-10,General Ward A,General,Occupied,P1029,Admitted
+GEN-A-11,General Ward A,General,Occupied,P1030,Admitted
+GEN-A-12,General Ward A,General,Occupied,P1031,Admitted
+GEN-A-13,General Ward A,General,Occupied,P1032,Admitted
+GEN-A-14,General Ward A,General,Occupied,P1033,Admitted
+GEN-A-15,General Ward A,General,Occupied,P1034,Admitted
+GEN-A-16,General Ward A,General,Occupied,P1035,Admitted
+GEN-A-17,General Ward A,General,Free,,Available
+GEN-A-18,General Ward A,General,Free,,Available
+GEN-A-19,General Ward A,General,Free,,Available
+GEN-A-20,General Ward A,General,Free,,Available
+GEN-B-01,General Ward B,General,Occupied,P1036,Discharge pending
+GEN-B-02,General Ward B,General,Occupied,P1037,Discharge pending
+GEN-B-03,General Ward B,General,Occupied,P1038,Admitted
+GEN-B-04,General Ward B,General,Occupied,P1039,Admitted
+GEN-B-05,General Ward B,General,Occupied,P1040,Admitted
+GEN-B-06,General Ward B,General,Occupied,P1041,Admitted
+GEN-B-07,General Ward B,General,Occupied,P1042,Admitted
+GEN-B-08,General Ward B,General,Occupied,P1043,Admitted
+GEN-B-09,General Ward B,General,Occupied,P1044,Admitted
+GEN-B-10,General Ward B,General,Occupied,P1045,Admitted
+GEN-B-11,General Ward B,General,Occupied,P1046,Admitted
+GEN-B-12,General Ward B,General,Occupied,P1047,Admitted
+GEN-B-13,General Ward B,General,Occupied,P1048,Admitted
+GEN-B-14,General Ward B,General,Occupied,P1049,Admitted
+GEN-B-15,General Ward B,General,Occupied,P1050,Admitted
+GEN-B-16,General Ward B,General,Occupied,P1051,Admitted
+GEN-B-17,General Ward B,General,Free,,Available
+GEN-B-18,General Ward B,General,Free,,Available
+GEN-B-19,General Ward B,General,Free,,Available
+GEN-B-20,General Ward B,General,Free,,Available
+PAE-Ward-01,Paediatric Ward,Paediatric,Occupied,P1052,Discharge pending
+PAE-Ward-02,Paediatric Ward,Paediatric,Occupied,P1053,Discharge pending
+PAE-Ward-03,Paediatric Ward,Paediatric,Occupied,P1054,Discharge pending
+PAE-Ward-04,Paediatric Ward,Paediatric,Occupied,P1055,Admitted
+PAE-Ward-05,Paediatric Ward,Paediatric,Occupied,P1056,Admitted
+PAE-Ward-06,Paediatric Ward,Paediatric,Occupied,P1057,Admitted
+PAE-Ward-07,Paediatric Ward,Paediatric,Occupied,P1058,Admitted
+PAE-Ward-08,Paediatric Ward,Paediatric,Occupied,P1059,Admitted
+PAE-Ward-09,Paediatric Ward,Paediatric,Occupied,P1060,Admitted
+PAE-Ward-10,Paediatric Ward,Paediatric,Occupied,P1061,Admitted
+ORT-Ward-01,Ortho Ward,Orthopaedic,Occupied,P1062,Admitted
+ORT-Ward-02,Ortho Ward,Orthopaedic,Occupied,P1063,Admitted
+ORT-Ward-03,Ortho Ward,Orthopaedic,Occupied,P1064,Admitted
+ORT-Ward-04,Ortho Ward,Orthopaedic,Occupied,P1065,Admitted
+ORT-Ward-05,Ortho Ward,Orthopaedic,Occupied,P1066,Admitted
+ORT-Ward-06,Ortho Ward,Orthopaedic,Occupied,P1067,Admitted
+ORT-Ward-07,Ortho Ward,Orthopaedic,Occupied,P1068,Admitted
+ORT-Ward-08,Ortho Ward,Orthopaedic,Occupied,P1069,Admitted
+ORT-Ward-09,Ortho Ward,Orthopaedic,Occupied,P1070,Admitted
+ORT-Ward-10,Ortho Ward,Orthopaedic,Occupied,P1071,Admitted
+ORT-Ward-11,Ortho Ward,Orthopaedic,Free,,Available
+ORT-Ward-12,Ortho Ward,Orthopaedic,Free,,Available
+MAT-01,Maternity,Maternity,Occupied,P1072,Admitted
+MAT-02,Maternity,Maternity,Occupied,P1073,Admitted
+MAT-03,Maternity,Maternity,Occupied,P1074,Admitted
+MAT-04,Maternity,Maternity,Occupied,P1075,Admitted
+MAT-05,Maternity,Maternity,Occupied,P1076,Admitted
+MAT-06,Maternity,Maternity,Occupied,P1077,Admitted
+MAT-07,Maternity,Maternity,Free,,Available
+MAT-08,Maternity,Maternity,Free,,Available

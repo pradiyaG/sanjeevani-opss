@@ -1,0 +1,17 @@
+# Render Blueprint: New > Blueprint > pick this repo. Render builds the Dockerfile,
+# gives you an HTTPS URL, checks /api/health and redeploys on every push to main.
+services:
+  - type: web
+    name: sanjeevani-ops
+    runtime: docker
+    plan: free
+    branch: main
+    autoDeploy: true
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: MONGO_URI
+        sync: false          # paste your MongoDB Atlas connection string in the Render dashboard
+      - key: AUTH_SECRET
+        generateValue: true  # Render creates a random secret

@@ -1,0 +1,72 @@
+test_id,test,patient_id,department,status,requested_time,expected_completion
+T0001,CT Scan,P1006,Emergency,Report pending,2026-11-16 04:00,2026-11-16 07:00
+T0002,CT Scan,P1007,Emergency,Report pending,2026-11-16 04:00,2026-11-16 07:00
+T0003,MRI,P1020,General Medicine,Report pending,2026-11-14 22:00,2026-11-15 22:00
+T0004,MRI,P1021,General Medicine,Report pending,2026-11-14 22:00,2026-11-15 22:00
+T0005,MRI,P1036,General Medicine,Report pending,2026-11-14 22:00,2026-11-15 22:00
+T0006,MRI,P1037,General Medicine,Report pending,2026-11-14 22:00,2026-11-15 22:00
+T0007,Troponin,P1001,Emergency,Report pending,2026-11-16 06:00,2026-11-16 08:00
+T0008,X-Ray,P1002,Emergency,Report pending,2026-11-16 06:00,2026-11-16 08:00
+T0009,X-Ray,P1003,Emergency,Report pending,2026-11-16 06:00,2026-11-16 08:00
+T0010,CBC,P1004,Emergency,Report pending,2026-11-16 06:00,2026-11-16 08:00
+T0011,X-Ray,P1005,Emergency,Report pending,2026-11-16 06:00,2026-11-16 08:00
+T0012,Ultrasound,P1036,Neurology,Completed,2026-11-16 03:00,2026-11-16 14:00
+T0013,ECG,P1012,Orthopaedics,Completed,2026-11-16 07:00,2026-11-16 11:00
+T0014,Troponin,P1057,Gynaecology,Requested,2026-11-16 06:00,2026-11-16 14:00
+T0015,Blood Culture,P1070,Gynaecology,Completed,2026-11-16 02:00,2026-11-16 13:00
+T0016,CBC,P1057,Cardiology,Completed,2026-11-16 03:00,2026-11-16 15:00
+T0017,MRI,P1039,Dermatology,Requested,2026-11-16 03:00,2026-11-16 11:00
+T0018,Ultrasound,P1064,Gynaecology,Completed,2026-11-16 09:00,2026-11-16 15:00
+T0019,Blood Culture,P1017,Orthopaedics,Completed,2026-11-16 05:00,2026-11-16 13:00
+T0020,LFT,P1052,Paediatrics,Requested,2026-11-16 08:00,2026-11-16 14:00
+T0021,ECG,P1012,Paediatrics,In progress,2026-11-16 02:00,2026-11-16 15:00
+T0022,X-Ray,P1008,Orthopaedics,Completed,2026-11-16 08:00,2026-11-16 13:00
+T0023,Ultrasound,P1086,Paediatrics,In progress,2026-11-16 01:00,2026-11-16 13:00
+T0024,CT Scan,P1032,Orthopaedics,In progress,2026-11-16 03:00,2026-11-16 14:00
+T0025,CT Scan,P1038,Cardiology,Requested,2026-11-16 01:00,2026-11-16 15:00
+T0026,Ultrasound,P1074,Cardiology,Requested,2026-11-16 09:00,2026-11-16 15:00
+T0027,X-Ray,P1001,General Medicine,Completed,2026-11-16 04:00,2026-11-16 15:00
+T0028,Echo,P1056,Dermatology,Completed,2026-11-16 06:00,2026-11-16 13:00
+T0029,Troponin,P1076,Gynaecology,Completed,2026-11-16 02:00,2026-11-16 11:00
+T0030,MRI,P1009,Gynaecology,Completed,2026-11-16 08:00,2026-11-16 12:00
+T0031,Blood Culture,P1039,ENT,Completed,2026-11-16 09:00,2026-11-16 12:00
+T0032,ECG,P1072,ENT,Requested,2026-11-16 03:00,2026-11-16 15:00
+T0033,X-Ray,P1040,Neurology,In progress,2026-11-16 01:00,2026-11-16 15:00
+T0034,Ultrasound,P1053,General Medicine,Completed,2026-11-16 05:00,2026-11-16 11:00
+T0035,LFT,P1002,General Medicine,Requested,2026-11-16 01:00,2026-11-16 13:00
+T0036,Troponin,P1048,Neurology,Completed,2026-11-16 07:00,2026-11-16 15:00
+T0037,ECG,P1047,General Medicine,Completed,2026-11-16 05:00,2026-11-16 15:00
+T0038,Blood Culture,P1009,Paediatrics,Completed,2026-11-16 06:00,2026-11-16 12:00
+T0039,CT Scan,P1020,ENT,Completed,2026-11-16 07:00,2026-11-16 13:00
+T0040,X-Ray,P1020,Orthopaedics,In progress,2026-11-16 06:00,2026-11-16 15:00
+T0041,ECG,P1015,Neurology,In progress,2026-11-16 02:00,2026-11-16 13:00
+T0042,CT Scan,P1028,ENT,Requested,2026-11-16 08:00,2026-11-16 12:00
+T0043,Troponin,P1074,Paediatrics,Completed,2026-11-16 02:00,2026-11-16 14:00
+T0044,LFT,P1049,ENT,Requested,2026-11-16 04:00,2026-11-16 15:00
+T0045,CT Scan,P1006,Paediatrics,Completed,2026-11-16 03:00,2026-11-16 14:00
+T0046,Blood Culture,P1062,Dermatology,Requested,2026-11-16 05:00,2026-11-16 11:00
+T0047,MRI,P1029,Cardiology,Completed,2026-11-16 03:00,2026-11-16 11:00
+T0048,ECG,P1038,Paediatrics,Requested,2026-11-16 08:00,2026-11-16 13:00
+T0049,Echo,P1059,Orthopaedics,In progress,2026-11-16 03:00,2026-11-16 15:00
+T0050,X-Ray,P1030,Cardiology,Completed,2026-11-16 04:00,2026-11-16 15:00
+T0051,ECG,P1002,General Medicine,Requested,2026-11-16 05:00,2026-11-16 12:00
+T0052,Echo,P1006,Paediatrics,In progress,2026-11-16 04:00,2026-11-16 14:00
+T0053,Ultrasound,P1082,Cardiology,Completed,2026-11-16 03:00,2026-11-16 15:00
+T0054,Blood Culture,P1023,Gynaecology,Requested,2026-11-16 02:00,2026-11-16 11:00
+T0055,LFT,P1028,Dermatology,In progress,2026-11-16 08:00,2026-11-16 14:00
+T0056,CBC,P1065,General Medicine,Completed,2026-11-16 07:00,2026-11-16 15:00
+T0057,MRI,P1058,Orthopaedics,Requested,2026-11-16 06:00,2026-11-16 15:00
+T0058,Ultrasound,P1033,Dermatology,Completed,2026-11-16 01:00,2026-11-16 11:00
+T0059,Blood Culture,P1015,Dermatology,Completed,2026-11-16 06:00,2026-11-16 11:00
+T0060,X-Ray,P1021,Cardiology,Completed,2026-11-16 08:00,2026-11-16 13:00
+T0061,ECG,P1051,Orthopaedics,Completed,2026-11-16 05:00,2026-11-16 13:00
+T0062,Echo,P1023,Paediatrics,In progress,2026-11-16 06:00,2026-11-16 13:00
+T0063,Ultrasound,P1006,Cardiology,Completed,2026-11-16 03:00,2026-11-16 13:00
+T0064,ECG,P1077,Paediatrics,Completed,2026-11-16 07:00,2026-11-16 12:00
+T0065,Echo,P1013,Emergency,Completed,2026-11-16 06:00,2026-11-16 14:00
+T0066,ECG,P1052,Cardiology,Completed,2026-11-16 03:00,2026-11-16 11:00
+T0067,Echo,P1005,General Medicine,Requested,2026-11-16 03:00,2026-11-16 11:00
+T0068,Troponin,P1013,Orthopaedics,Completed,2026-11-16 03:00,2026-11-16 14:00
+T0069,Troponin,P1060,Cardiology,Completed,2026-11-16 08:00,2026-11-16 12:00
+T0070,Echo,P1056,Dermatology,In progress,2026-11-16 08:00,2026-11-16 15:00
+T0071,X-Ray,P1074,Emergency,Completed,2026-11-16 03:00,2026-11-16 15:00

@@ -1,0 +1,10 @@
+request_id,patient_id,ward,bed_id,requested_time,pending_tasks,medication_status,document_status
+DR001,P1006,ED,ED-06,2026-11-16 05:00,Lab report pending; Discharge summary not signed,Pending,Incomplete
+DR002,P1007,ED,ED-07,2026-11-16 05:00,Lab report pending; Discharge summary not signed,Pending,Incomplete
+DR003,P1020,General Ward A,GEN-A-01,2026-11-15 06:00,MRI report pending,Pending,Draft
+DR004,P1021,General Ward A,GEN-A-02,2026-11-15 06:00,MRI report pending,Pending,Draft
+DR005,P1036,General Ward B,GEN-B-01,2026-11-15 06:00,MRI report pending,Pending,Draft
+DR006,P1037,General Ward B,GEN-B-02,2026-11-15 06:00,MRI report pending,Pending,Draft
+DR007,P1052,Paediatric Ward,PAE-Ward-01,2026-11-16 08:00,None – leaving within the hour,Dispensed,Complete
+DR008,P1053,Paediatric Ward,PAE-Ward-02,2026-11-16 08:00,None – leaving within the hour,Dispensed,Complete
+DR009,P1054,Paediatric Ward,PAE-Ward-03,2026-11-16 08:00,None – leaving within the hour,Dispensed,Complete

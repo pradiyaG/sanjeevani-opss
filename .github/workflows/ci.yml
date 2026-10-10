@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test-and-build:
+    runs-on: ubuntu-latest
+    services:
+      mongo:
+        image: mongo:7
+        ports: ["27017:27017"]
+    env:
+      MONGO_URI: mongodb://127.0.0.1:27017/sanjeevani-ci
+      AUTH_SECRET: ci-only-secret
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Server - install and unit-test the six agent stages
+        working-directory: server
+        run: |
+          npm ci
+          npm test
+
+      - name: Server - start API and run the end-to-end API test
+        working-directory: server
+        run: |
+          node index.js > server.log 2>&1 &
+          for i in $(seq 1 30); do curl -sf http://localhost:4000/api/health && break; sleep 1; done
+          BASE_URL=http://localhost:4000 npm run test:api
+          cat server.log | tail -20
+
+      - name: Client - install and build
+        working-directory: client
+        run: |
+          npm ci
+          npm run build
+
+      - name: Docker image builds
+        run: docker build -t sanjeevani:ci .
+
+  # Render auto-deploys main on every push (render.yaml). To deploy only after CI passes,
+  # set autoDeploy: false in render.yaml and add a RENDER_DEPLOY_HOOK repository secret.
+  deploy:
+    needs: test-and-build
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Render deploy hook
+        env:
+          HOOK: ${{ secrets.RENDER_DEPLOY_HOOK }}
+        run: |
+          if [ -n "$HOOK" ]; then curl -fsS -X POST "$HOOK"; else echo "No RENDER_DEPLOY_HOOK secret - relying on Render auto-deploy."; fi

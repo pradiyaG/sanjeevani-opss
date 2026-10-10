@@ -1,0 +1,132 @@
+staff_id,name,role,department,date,shift,availability,patients_assigned
+D01,Dr. Kavya Menon,Doctor,Emergency,2026-11-16,Morning (08–14),Available,17
+D01,Dr. Kavya Menon,Doctor,Emergency,2026-11-16,Evening (14–20),Available,17
+D02,Dr. Rahul Iyer,Doctor,Emergency,2026-11-16,Morning (08–14),Available,17
+D02,Dr. Rahul Iyer,Doctor,Emergency,2026-11-16,Evening (14–20),On leave,17
+D03,Dr. Prakash Rao,Doctor,Cardiology,2026-11-16,Morning (08–14),Available,38
+D03,Dr. Prakash Rao,Doctor,Cardiology,2026-11-16,Evening (14–20),Available,38
+D04,Dr. Anita Menon,Doctor,Cardiology,2026-11-16,Morning (08–14),Available,14
+D04,Dr. Anita Menon,Doctor,Cardiology,2026-11-16,Evening (14–20),Available,14
+D05,Dr. Sunil Hegde,Doctor,Cardiology,2026-11-16,Morning (08–14),Available,19
+D05,Dr. Sunil Hegde,Doctor,Cardiology,2026-11-16,Evening (14–20),Available,19
+D06,Dr. Karthik Reddy,Doctor,Orthopaedics,2026-11-16,Morning (08–14),Available,11
+D06,Dr. Karthik Reddy,Doctor,Orthopaedics,2026-11-16,Evening (14–20),Available,11
+D07,Dr. Meghana Hegde,Doctor,Orthopaedics,2026-11-16,Morning (08–14),Available,11
+D07,Dr. Meghana Hegde,Doctor,Orthopaedics,2026-11-16,Evening (14–20),Available,11
+D08,Dr. Naveen Pillai,Doctor,Orthopaedics,2026-11-16,Morning (08–14),Available,11
+D08,Dr. Naveen Pillai,Doctor,Orthopaedics,2026-11-16,Evening (14–20),Available,11
+D09,Dr. Pooja Joshi,Doctor,General Medicine,2026-11-16,Morning (08–14),Available,17
+D09,Dr. Pooja Joshi,Doctor,General Medicine,2026-11-16,Evening (14–20),Available,17
+D10,Dr. Rohan Gowda,Doctor,General Medicine,2026-11-16,Morning (08–14),Available,17
+D10,Dr. Rohan Gowda,Doctor,General Medicine,2026-11-16,Evening (14–20),Available,17
+D11,Dr. Shalini Bhat,Doctor,General Medicine,2026-11-16,Morning (08–14),Available,17
+D11,Dr. Shalini Bhat,Doctor,General Medicine,2026-11-16,Evening (14–20),Available,17
+D12,Dr. Varun Rao,Doctor,General Medicine,2026-11-16,Morning (08–14),Available,17
+D12,Dr. Varun Rao,Doctor,General Medicine,2026-11-16,Evening (14–20),Available,17
+D13,Dr. Anjali Menon,Doctor,Paediatrics,2026-11-16,Morning (08–14),Available,10
+D13,Dr. Anjali Menon,Doctor,Paediatrics,2026-11-16,Evening (14–20),Available,10
+D14,Dr. Sanjay Iyer,Doctor,Paediatrics,2026-11-16,Morning (08–14),Available,10
+D14,Dr. Sanjay Iyer,Doctor,Paediatrics,2026-11-16,Evening (14–20),Available,10
+D15,Dr. Lakshmi Shetty,Doctor,Gynaecology,2026-11-16,Morning (08–14),Available,19
+D15,Dr. Lakshmi Shetty,Doctor,Gynaecology,2026-11-16,Evening (14–20),Available,19
+D16,Dr. Harish Nair,Doctor,Gynaecology,2026-11-16,Morning (08–14),Available,19
+D16,Dr. Harish Nair,Doctor,Gynaecology,2026-11-16,Evening (14–20),Available,19
+D17,Dr. Nisha Kulkarni,Doctor,ENT,2026-11-16,Morning (08–14),Available,18
+D17,Dr. Nisha Kulkarni,Doctor,ENT,2026-11-16,Evening (14–20),Available,18
+D18,Dr. Manoj Reddy,Doctor,Dermatology,2026-11-16,Morning (08–14),Available,18
+D18,Dr. Manoj Reddy,Doctor,Dermatology,2026-11-16,Evening (14–20),Available,18
+D19,Dr. Rekha Hegde,Doctor,Neurology,2026-11-16,Morning (08–14),Available,17
+D19,Dr. Rekha Hegde,Doctor,Neurology,2026-11-16,Evening (14–20),Available,17
+D20,Dr. Ganesh Pillai,Doctor,Neurology,2026-11-16,Morning (08–14),Available,17
+D20,Dr. Ganesh Pillai,Doctor,Neurology,2026-11-16,Evening (14–20),Available,17
+N001,Nurse Kavya Shetty,Nurse,Emergency,2026-11-16,Morning (08–14),Available,4
+N002,Nurse Rahul Reddy,Nurse,Emergency,2026-11-16,Morning (08–14),Available,6
+N003,Nurse Sneha Joshi,Nurse,Emergency,2026-11-16,Morning (08–14),Available,5
+N004,Nurse Vikram Rao,Nurse,Emergency,2026-11-16,Morning (08–14),Available,6
+N005,Nurse Divya Shetty,Nurse,Emergency,2026-11-16,Morning (08–14),Available,3
+N006,Nurse Karthik Reddy,Nurse,Emergency,2026-11-16,Evening (14–20),Available,4
+N007,Nurse Meghana Joshi,Nurse,Emergency,2026-11-16,Evening (14–20),Available,4
+N008,Nurse Naveen Rao,Nurse,Emergency,2026-11-16,Evening (14–20),Available,6
+N009,Nurse Pooja Shetty,Nurse,Emergency,2026-11-16,Night (20–08),Available,6
+N010,Nurse Rohan Reddy,Nurse,Emergency,2026-11-16,Night (20–08),Available,3
+N011,Nurse Shalini Joshi,Nurse,Emergency,2026-11-16,Night (20–08),Available,4
+N012,Nurse Varun Rao,Nurse,Emergency,2026-11-16,Night (20–08),Available,3
+N013,Nurse Anjali Shetty,Nurse,Emergency,2026-11-16,Night (20–08),Available,4
+N014,Nurse Sanjay Reddy,Nurse,Cardiology,2026-11-16,Morning (08–14),Available,4
+N015,Nurse Lakshmi Joshi,Nurse,Cardiology,2026-11-16,Morning (08–14),Available,6
+N016,Nurse Harish Rao,Nurse,Cardiology,2026-11-16,Morning (08–14),Available,5
+N017,Nurse Nisha Shetty,Nurse,Cardiology,2026-11-16,Evening (14–20),Available,5
+N018,Nurse Manoj Reddy,Nurse,Cardiology,2026-11-16,Evening (14–20),Available,3
+N019,Nurse Rekha Joshi,Nurse,Cardiology,2026-11-16,Evening (14–20),Available,4
+N020,Nurse Ganesh Rao,Nurse,Cardiology,2026-11-16,Night (20–08),Available,3
+N021,Nurse Bhavana Shetty,Nurse,Cardiology,2026-11-16,Night (20–08),Available,5
+N022,Nurse Arjun Reddy,Nurse,Cardiology,2026-11-16,Night (20–08),Available,4
+N023,Nurse Kavya Joshi,Nurse,Orthopaedics,2026-11-16,Morning (08–14),Available,4
+N024,Nurse Rahul Rao,Nurse,Orthopaedics,2026-11-16,Morning (08–14),Available,4
+N025,Nurse Sneha Shetty,Nurse,Orthopaedics,2026-11-16,Morning (08–14),Available,3
+N026,Nurse Vikram Reddy,Nurse,Orthopaedics,2026-11-16,Evening (14–20),Available,5
+N027,Nurse Divya Joshi,Nurse,Orthopaedics,2026-11-16,Evening (14–20),Available,6
+N028,Nurse Karthik Rao,Nurse,Orthopaedics,2026-11-16,Evening (14–20),Available,5
+N029,Nurse Meghana Shetty,Nurse,Orthopaedics,2026-11-16,Night (20–08),Available,4
+N030,Nurse Naveen Reddy,Nurse,Orthopaedics,2026-11-16,Night (20–08),Available,4
+N031,Nurse Pooja Joshi,Nurse,Orthopaedics,2026-11-16,Night (20–08),Available,3
+N032,Nurse Rohan Rao,Nurse,General Medicine,2026-11-16,Morning (08–14),Available,4
+N033,Nurse Shalini Shetty,Nurse,General Medicine,2026-11-16,Morning (08–14),Available,3
+N034,Nurse Varun Reddy,Nurse,General Medicine,2026-11-16,Morning (08–14),Available,6
+N035,Nurse Anjali Joshi,Nurse,General Medicine,2026-11-16,Morning (08–14),Available,3
+N036,Nurse Sanjay Rao,Nurse,General Medicine,2026-11-16,Morning (08–14),Available,4
+N037,Nurse Lakshmi Shetty,Nurse,General Medicine,2026-11-16,Evening (14–20),Available,5
+N038,Nurse Harish Reddy,Nurse,General Medicine,2026-11-16,Evening (14–20),Available,4
+N039,Nurse Nisha Joshi,Nurse,General Medicine,2026-11-16,Evening (14–20),Available,5
+N040,Nurse Manoj Rao,Nurse,General Medicine,2026-11-16,Evening (14–20),Available,4
+N041,Nurse Rekha Shetty,Nurse,General Medicine,2026-11-16,Evening (14–20),Available,3
+N042,Nurse Ganesh Reddy,Nurse,General Medicine,2026-11-16,Night (20–08),Available,4
+N043,Nurse Bhavana Joshi,Nurse,General Medicine,2026-11-16,Night (20–08),Available,3
+N044,Nurse Arjun Rao,Nurse,General Medicine,2026-11-16,Night (20–08),Available,4
+N045,Nurse Kavya Shetty,Nurse,General Medicine,2026-11-16,Night (20–08),Available,5
+N046,Nurse Rahul Reddy,Nurse,General Medicine,2026-11-16,Night (20–08),Available,6
+N047,Nurse Sneha Joshi,Nurse,Paediatrics,2026-11-16,Morning (08–14),Available,3
+N048,Nurse Vikram Rao,Nurse,Paediatrics,2026-11-16,Morning (08–14),Available,6
+N049,Nurse Divya Shetty,Nurse,Paediatrics,2026-11-16,Morning (08–14),Available,4
+N050,Nurse Karthik Reddy,Nurse,Paediatrics,2026-11-16,Evening (14–20),Available,5
+N051,Nurse Meghana Joshi,Nurse,Paediatrics,2026-11-16,Evening (14–20),Available,5
+N052,Nurse Naveen Rao,Nurse,Paediatrics,2026-11-16,Evening (14–20),Available,6
+N053,Nurse Pooja Shetty,Nurse,Paediatrics,2026-11-16,Night (20–08),Available,6
+N054,Nurse Rohan Reddy,Nurse,Paediatrics,2026-11-16,Night (20–08),Available,6
+N055,Nurse Shalini Joshi,Nurse,Paediatrics,2026-11-16,Night (20–08),Available,5
+N056,Nurse Varun Rao,Nurse,ICU,2026-11-16,Morning (08–14),Available,5
+N057,Nurse Anjali Shetty,Nurse,ICU,2026-11-16,Morning (08–14),Available,4
+N058,Nurse Sanjay Reddy,Nurse,ICU,2026-11-16,Morning (08–14),Available,3
+N059,Nurse Lakshmi Joshi,Nurse,ICU,2026-11-16,Morning (08–14),Available,6
+N060,Nurse Harish Rao,Nurse,ICU,2026-11-16,Morning (08–14),Available,4
+N061,Nurse Nisha Shetty,Nurse,ICU,2026-11-16,Morning (08–14),Available,5
+N062,Nurse Manoj Reddy,Nurse,ICU,2026-11-16,Evening (14–20),Available,5
+N063,Nurse Rekha Joshi,Nurse,ICU,2026-11-16,Evening (14–20),Available,3
+N064,Nurse Ganesh Rao,Nurse,ICU,2026-11-16,Evening (14–20),Available,3
+N065,Nurse Bhavana Shetty,Nurse,ICU,2026-11-16,Evening (14–20),Available,6
+N066,Nurse Arjun Reddy,Nurse,ICU,2026-11-16,Evening (14–20),Available,6
+N067,Nurse Kavya Joshi,Nurse,ICU,2026-11-16,Evening (14–20),Available,6
+N068,Nurse Rahul Rao,Nurse,ICU,2026-11-16,Night (20–08),Available,6
+N069,Nurse Sneha Shetty,Nurse,ICU,2026-11-16,Night (20–08),Available,4
+N070,Nurse Vikram Reddy,Nurse,ICU,2026-11-16,Night (20–08),Available,3
+N071,Nurse Divya Joshi,Nurse,ICU,2026-11-16,Night (20–08),Available,6
+N072,Nurse Karthik Rao,Nurse,ICU,2026-11-16,Night (20–08),Available,6
+N073,Nurse Meghana Shetty,Nurse,ICU,2026-11-16,Night (20–08),Available,3
+N074,Nurse Naveen Reddy,Nurse,Gynaecology,2026-11-16,Morning (08–14),Available,6
+N075,Nurse Pooja Joshi,Nurse,Gynaecology,2026-11-16,Morning (08–14),Available,6
+N076,Nurse Rohan Rao,Nurse,Gynaecology,2026-11-16,Evening (14–20),Available,5
+N077,Nurse Shalini Shetty,Nurse,Gynaecology,2026-11-16,Evening (14–20),Available,3
+N078,Nurse Varun Reddy,Nurse,Gynaecology,2026-11-16,Night (20–08),Available,4
+N079,Nurse Anjali Joshi,Nurse,Gynaecology,2026-11-16,Night (20–08),Available,5
+N080,Nurse Sanjay Rao,Nurse,ENT,2026-11-16,Morning (08–14),Available,5
+N081,Nurse Lakshmi Shetty,Nurse,ENT,2026-11-16,Evening (14–20),Available,5
+N082,Nurse Harish Reddy,Nurse,ENT,2026-11-16,Night (20–08),Available,5
+N083,Nurse Nisha Joshi,Nurse,Dermatology,2026-11-16,Morning (08–14),Available,5
+N084,Nurse Manoj Rao,Nurse,Dermatology,2026-11-16,Evening (14–20),Available,5
+N085,Nurse Rekha Shetty,Nurse,Dermatology,2026-11-16,Night (20–08),Available,5
+N086,Nurse Ganesh Reddy,Nurse,Neurology,2026-11-16,Morning (08–14),Available,5
+N087,Nurse Bhavana Joshi,Nurse,Neurology,2026-11-16,Morning (08–14),Available,5
+N088,Nurse Arjun Rao,Nurse,Neurology,2026-11-16,Evening (14–20),Available,4
+N089,Nurse Kavya Shetty,Nurse,Neurology,2026-11-16,Evening (14–20),Available,5
+N090,Nurse Rahul Reddy,Nurse,Neurology,2026-11-16,Night (20–08),Available,6
+N091,Nurse Sneha Joshi,Nurse,Neurology,2026-11-16,Night (20–08),Available,6

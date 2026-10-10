@@ -1,0 +1,89 @@
+patient_id,age_group,department,visit_type,status
+P1001,18-35,Emergency,ED,In bed
+P1002,0-12,Emergency,ED,In bed
+P1003,18-35,Emergency,ED,In bed
+P1004,36-55,Emergency,ED,In bed
+P1005,13-17,Emergency,ED,In bed
+P1006,70+,Emergency,ED,In bed
+P1007,56-70,Emergency,ED,In bed
+P1008,13-17,Critical Care,IPD,In bed
+P1009,70+,Critical Care,IPD,In bed
+P1010,70+,Critical Care,IPD,In bed
+P1011,56-70,Critical Care,IPD,In bed
+P1012,70+,Critical Care,IPD,In bed
+P1013,70+,Critical Care,IPD,In bed
+P1014,70+,Critical Care,IPD,In bed
+P1015,0-12,Critical Care,IPD,In bed
+P1016,0-12,Critical Care,IPD,In bed
+P1017,18-35,Critical Care,IPD,In bed
+P1018,36-55,Critical Care,IPD,In bed
+P1019,0-12,Critical Care,IPD,In bed
+P1020,36-55,General Medicine,IPD,In bed
+P1021,56-70,General Medicine,IPD,In bed
+P1022,0-12,General Medicine,IPD,In bed
+P1023,56-70,General Medicine,IPD,In bed
+P1024,36-55,General Medicine,IPD,In bed
+P1025,18-35,General Medicine,IPD,In bed
+P1026,36-55,General Medicine,IPD,In bed
+P1027,13-17,General Medicine,IPD,In bed
+P1028,18-35,General Medicine,IPD,In bed
+P1029,36-55,General Medicine,IPD,In bed
+P1030,18-35,General Medicine,IPD,In bed
+P1031,18-35,General Medicine,IPD,In bed
+P1032,0-12,General Medicine,IPD,In bed
+P1033,36-55,General Medicine,IPD,In bed
+P1034,70+,General Medicine,IPD,In bed
+P1035,56-70,General Medicine,IPD,In bed
+P1036,36-55,General Medicine,IPD,In bed
+P1037,70+,General Medicine,IPD,In bed
+P1038,0-12,General Medicine,IPD,In bed
+P1039,13-17,General Medicine,IPD,In bed
+P1040,0-12,General Medicine,IPD,In bed
+P1041,56-70,General Medicine,IPD,In bed
+P1042,18-35,General Medicine,IPD,In bed
+P1043,18-35,General Medicine,IPD,In bed
+P1044,0-12,General Medicine,IPD,In bed
+P1045,18-35,General Medicine,IPD,In bed
+P1046,0-12,General Medicine,IPD,In bed
+P1047,18-35,General Medicine,IPD,In bed
+P1048,13-17,General Medicine,IPD,In bed
+P1049,36-55,General Medicine,IPD,In bed
+P1050,36-55,General Medicine,IPD,In bed
+P1051,36-55,General Medicine,IPD,In bed
+P1052,36-55,Paediatrics,IPD,In bed
+P1053,56-70,Paediatrics,IPD,In bed
+P1054,13-17,Paediatrics,IPD,In bed
+P1055,0-12,Paediatrics,IPD,In bed
+P1056,18-35,Paediatrics,IPD,In bed
+P1057,13-17,Paediatrics,IPD,In bed
+P1058,18-35,Paediatrics,IPD,In bed
+P1059,13-17,Paediatrics,IPD,In bed
+P1060,0-12,Paediatrics,IPD,In bed
+P1061,13-17,Paediatrics,IPD,In bed
+P1062,56-70,Orthopaedics,IPD,In bed
+P1063,56-70,Orthopaedics,IPD,In bed
+P1064,0-12,Orthopaedics,IPD,In bed
+P1065,70+,Orthopaedics,IPD,In bed
+P1066,56-70,Orthopaedics,IPD,In bed
+P1067,0-12,Orthopaedics,IPD,In bed
+P1068,56-70,Orthopaedics,IPD,In bed
+P1069,18-35,Orthopaedics,IPD,In bed
+P1070,36-55,Orthopaedics,IPD,In bed
+P1071,56-70,Orthopaedics,IPD,In bed
+P1072,18-35,Gynaecology,IPD,In bed
+P1073,36-55,Gynaecology,IPD,In bed
+P1074,56-70,Gynaecology,IPD,In bed
+P1075,70+,Gynaecology,IPD,In bed
+P1076,56-70,Gynaecology,IPD,In bed
+P1077,56-70,Gynaecology,IPD,In bed
+P1078,56-70,Emergency,ED,Waiting in ED – no bed
+P1079,18-35,Emergency,ED,Waiting in ED – no bed
+P1080,0-12,Emergency,ED,Waiting in ED – no bed
+P1081,18-35,Emergency,ED,Waiting in ED – no bed
+P1082,56-70,Emergency,ED,Waiting in ED – no bed
+P1083,56-70,Emergency,ED,Waiting in ED – no bed
+P1084,36-55,Emergency,ED,Waiting in ED – no bed
+P1085,18-35,Emergency,ED,Waiting in ED – no bed
+P1086,18-35,Emergency,ED,Waiting in ED – no bed
+P1087,56-70,Critical Care,ED,Awaiting ICU bed
+P1088,56-70,Critical Care,ED,Awaiting ICU bed
