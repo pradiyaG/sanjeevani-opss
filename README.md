@@ -1,252 +1,237 @@
-# Sanjeevani Operations Agent
+# 🏥 Sanjeevani Hospital Operations Agent
 
-**Blocked beds, not busy wards.** An operations agent for **CYPHER 2026 · Challenge 05 – The Blocked Bed**. It works out why patients at Sanjeevani Multispeciality Hospital are stuck, ranks the problems, proposes fixes for the right person to approve, and explains every step with evidence from the hospital data.
+### Challenge 05 – The Blocked Bed | CYPHER 2026
 
-![React](https://img.shields.io/badge/React-18-61DAFB?logo=react&logoColor=white)
-![Node](https://img.shields.io/badge/Node.js-20-339933?logo=node.js&logoColor=white)
-![Express](https://img.shields.io/badge/Express-4-000000?logo=express&logoColor=white)
-![MongoDB](https://img.shields.io/badge/MongoDB-7-47A248?logo=mongodb&logoColor=white)
-![Data](https://img.shields.io/badge/data-synthetic-blue)
+## 📌 Problem Statement
 
-> **Decision support only.** The data is synthetic. Every action is approved by authorised staff. The agent never diagnoses, prescribes, moves patients, reassigns staff or releases beds by itself.
+Sanjeevani Multispeciality Hospital uses separate systems to manage beds, appointments, laboratory reports, discharges, staff schedules, and patient complaints. However, these systems do not clearly explain why the Emergency Department is overcrowded or why patients are waiting for beds when beds may be available in other wards.
 
----
+This creates delays in patient care, discharge processes, diagnostic reports, and staff coordination.
 
-## Contents
-- [The problem](#the-problem)
-- [What the agent does](#what-the-agent-does)
-- [What it finds in the dataset](#what-it-finds-in-the-dataset)
-- [Screens and roles](#screens-and-roles)
-- [Getting started](#getting-started)
-- [The hour-14 data update](#the-hour-14-data-update)
-- [How it works](#how-it-works)
-- [API](#api)
-- [Tests](#tests)
-- [Deployment](#deployment)
-- [Project structure](#project-structure)
-- [Safety and limits](#safety-and-limits)
+## 💡 Proposed Solution
 
----
+**Sanjeevani Hospital Operations Agent** is a web-based hospital operations management and decision-support system built using React, Express.js, and MongoDB.
 
-## The problem
+It analyzes hospital operational data to identify bottlenecks, understand the reasons behind delays, prioritize issues, and recommend suitable actions for authorized hospital staff.
 
-Emergency patients at Sanjeevani are waiting **90 minutes today against a usual 35**. Everyone's first answer is "the emergency department is overloaded".
+The system follows the workflow:
 
-Dr. Suresh Iyer, the Medical Superintendent, needs to know:
-- Which departments need attention today?
-- Why is the emergency wait so long?
-- Are beds blocked by late discharges or test reports?
-- Are some doctors overloaded while others are free?
-- Which problems are most urgent, and what should the team do first?
+**Observe → Reason → Evaluate → Decide → Act → Explain**
 
-The clues sit in nine separate files: admissions, appointments, beds, diagnostics, discharges, emergency waiting times, feedback, patients and staff. Each one on its own only says "busy". The agent joins them up to find the real cause.
+## ✨ Key Features
 
-## What the agent does
+- **Hospital Overview:** View important operational information and identify bottlenecks.
+- **Patient Triage:** Assess and prioritize patients using recorded information and triage rules.
+- **Bed Management:** Monitor bed availability and identify issues affecting patient admission.
+- **Discharge Management:** Identify discharge delays caused by pending tasks and reports.
+- **Diagnostic Monitoring:** Track overdue laboratory and diagnostic reports.
+- **Staff Management:** Identify staffing shortages and workload imbalances.
+- **Issue Detection:** Find operational problems and rank them according to urgency and impact.
+- **Action Management:** Recommend actions for review and approval by authorized staff.
+- **Complaint Management:** Connect patient complaints with operational issues.
+- **Data Updates:** Upload updated CSV datasets and recalculate operational findings.
+- **Role-Based Access:** Provide different permissions for different hospital staff roles.
+- **Audit and Testing:** Maintain action records and test important system functions.
 
-Every step of the agent loop is a working screen, and every figure is computed from the data. Nothing is typed into the code.
+## 🛠️ Technologies Used
 
-| Step | What the agent does | Where you see it |
-|---|---|---|
-| **Observe** | Reads the 9 CSV files from MongoDB: beds, discharges, tests, waits, rosters, appointments, complaints | Overview figures |
-| **Reason** | Links signals into a cause chain and marks the root cause | Issues → cause chain |
-| **Evaluate** | Compares options with their expected effect and scores each issue as urgency × impact (1–5 each) | Issues → options |
-| **Decide** | Ranks issues; the top three become "What needs my attention today?" | Overview |
-| **Act** | Proposes an action with a named owner; approval creates a task (T-101 …) | Action queue |
-| **Explain** | Shows evidence lines that cite the source file and record IDs, and logs every decision | Evidence, audit log |
-
-## What it finds in the dataset
-
-Snapshot **2026-11-16 10:00** (one hour after the latest emergency waiting-time reading):
-
-| # | Issue | Evidence |
-|---|---|---|
-| 1 | **Emergency backed up by blocked beds, not patient volume** | ED wait 90 vs 35 min; 7/7 ED beds full; 9 patients waiting with no bed; ED-06 and ED-07 held by discharges waiting on late CT reports and unsigned summaries; 10 beds free in General Wards A/B and the Ortho Ward |
-| 2 | **ICU full: 2 critical patients waiting** | ICU 12/12; P1087 (P1) waiting since 07:00, P1088 (P2) since 08:30; no ICU discharge pending |
-| 3 | **6 discharges stuck on pending tasks** | 4 General Ward discharges waiting 28 h on MRI reports. The 3 Paediatric discharges are leaving within the hour, so they are *not* flagged |
-| 4 | **11 test reports overdue, 6 holding a discharge** | MRI T0003–T0006 12 h late; CT T0001/T0002 3 h late |
-| 5 | **Dr. Prakash Rao overloaded while Dr. Anita Menon has open slots** | 38 patients today (usually 17), 95 min average wait; 9 open slots from 11:00 to 15:00 |
-| 6 | **Emergency evening shift short-staffed** | 1 of 2 doctors (one on leave), 3 of 5 nurses |
-| 7 | **Complaints that trace to operations** | Waiting-time and discharge-delay complaints linked to the issues above |
-| 8 | **Orthopaedics 10:00–11:00 runs late every day** | 90 min average wait vs 24 in other hours; matches repeated complaints |
-
-> Scores are demonstration settings, not validated hospital standards. When the data does not show a cause (for example *why* reports are late), the agent says so instead of guessing.
-
-## Screens and roles
-
-| Screen | What it shows |
+| Component | Technology |
 |---|---|
-| **Overview** | Headline, key figures, goals, today's top three, ranked-issue carousel, department pressure tiles |
-| **Patient Triage** | Waiting patients from the data (ICU P1/P2 ranked; ED patients with no recorded priority wait for a clinician to assess them), plus new registrations with a live assessment as you type |
-| **Issues** | Cause chain, options considered, chosen action and status, evidence |
-| **Actions** | Approve / reject (a written reason is required) / mark done; audit log |
-| **Beds & Discharges** | Bed grid per ward, discharge requests and what each is waiting on |
-| **Diagnostics & Staff** | Overdue tests, doctor workload, clinics and slots, shift cover |
-| **Complaints** | All feedback, linked to operational issues where the data supports it |
-| **Data** | The 9 files, uploads of updated files, the snapshot time, restoring the original data |
+| Frontend | React.js |
+| Development Server | Vite |
+| Backend | Node.js and Express.js |
+| Database | MongoDB |
+| Database Integration | Mongoose |
+| Data Processing | CSV datasets and JavaScript |
+| Testing | Node.js test runner and API smoke tests |
+| Containerization | Docker and Docker Compose |
+| Deployment Configuration | Render |
+| Version Control | Git and GitHub |
 
-Sign in with your full name, a work email, a staff ID (such as `SMH-10234`) and a role. Each role sees only its own screens and approves only its own kind of action. The server checks this on every request.
+## 🏗️ System Architecture
 
-| Role | Screens | Can approve |
-|---|---|---|
-| Medical Superintendent | All, including Data | Everything |
-| Shift Manager | All, including Data | Staff, scheduling, workload, beds, triage |
-| Doctor | Overview, Triage, Beds, Diagnostics | Beds, triage |
-| Nurse | Triage, Beds | None; can register and assess patients |
-| Nursing Head | Overview, Triage, Issues, Actions, Beds, Diagnostics | Staff, beds, triage |
-| Lab Supervisor | Overview, Issues, Actions, Diagnostics | Lab escalations |
-| Department Head | Overview, Triage, Issues, Actions, Beds, Diagnostics | Workload, scheduling, staff, triage |
-| Discharge Coordinator | Overview, Issues, Actions, Beds | Discharge tasks |
-| Front Office / Reception | Triage, Actions, Complaints | Scheduling, complaints |
+1. **Data Layer:** Stores hospital operational data, including beds, admissions, appointments, staff, diagnostics, discharges, and feedback.
+2. **Backend Layer:** Processes data, identifies bottlenecks, applies triage rules, and generates recommendations.
+3. **Database Layer:** Uses MongoDB to store and manage application data.
+4. **Frontend Layer:** Displays dashboards, patient triage, issues, beds, diagnostics, complaints, and proposed actions.
+5. **Decision-Support Layer:** Helps authorized hospital staff review evidence and approve appropriate actions.
 
-## Getting started
+## 📂 Project Structure
+
+```text
+sanjeevani-ops/
+├── client/
+│   ├── src/
+│   │   ├── pages/
+│   │   ├── App.jsx
+│   │   ├── api.js
+│   │   ├── ui.jsx
+│   │   └── styles.css
+│   ├── package.json
+│   └── vite.config.js
+├── server/
+│   ├── data/
+│   │   └── original/
+│   ├── test/
+│   ├── agent.js
+│   ├── index.js
+│   ├── models.js
+│   ├── store.js
+│   ├── triage.js
+│   ├── seed.js
+│   ├── package.json
+│   └── .env.example
+├── .github/
+│   └── workflows/
+├── Dockerfile
+├── docker-compose.yml
+├── render.yaml
+└── README.md
+```
+
+## ⚙️ Installation and Setup
 
 ### Prerequisites
-- [Node.js 20+](https://nodejs.org)
-- [MongoDB 7](https://www.mongodb.com/try/download/community) running locally, **or** a free [MongoDB Atlas](https://www.mongodb.com/atlas) cluster
-- *(Optional)* [Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
-### Option A: Docker (one command)
+Install the following tools:
+
+- Node.js (version 20 recommended)
+- npm
+- MongoDB, or Docker Desktop with Docker Compose
+- Git (optional for local development)
+
+### Option 1: Run Using Docker
+
+1. Clone the repository:
+
+```bash
+git clone https://github.com/YOUR-USERNAME/sanjeevani-hospital-ops.git
+```
+
+2. Open the project folder:
+
+```bash
+cd sanjeevani-hospital-ops
+```
+
+3. Start the application:
+
 ```bash
 docker compose up --build
 ```
-Open **http://localhost:4000**. MongoDB, the API and the built website all start together, and the dataset loads on first start.
 
-### Option B: run locally (VS Code)
+4. Open the application in your browser:
+
+```text
+http://localhost:4000
+```
+
+Replace `YOUR-USERNAME` with your GitHub username.
+
+### Option 2: Run Locally Using VS Code
+
+**Step 1: Start MongoDB**
+
+Make sure your MongoDB server is running.
+
+**Step 2: Configure the backend**
+
+Open a terminal in VS Code:
+
 ```bash
-# 1. API
 cd server
-cp .env.example .env        # Windows: copy .env.example .env
 npm install
-npm run seed                # loads the 9 CSV files into MongoDB and runs the agent
-npm run dev                 # http://localhost:4000
+```
 
-# 2. Website (second terminal)
+Copy `.env.example` to `.env` and configure the MongoDB connection and authentication secret.
+
+**Step 3: Load the dataset**
+
+```bash
+npm run seed
+```
+
+**Step 4: Start the backend**
+
+```bash
+npm run dev
+```
+
+The backend runs at:
+
+```text
+http://localhost:4000
+```
+
+**Step 5: Start the frontend**
+
+Open a second terminal:
+
+```bash
 cd client
 npm install
-npm run dev                 # http://localhost:5173
+npm run dev
 ```
 
-### Environment variables (`server/.env`)
-| Name | Example | Purpose |
-|---|---|---|
-| `MONGO_URI` | `mongodb://127.0.0.1:27017/sanjeevani` | MongoDB connection string (Atlas works too) |
-| `PORT` | `4000` | API port |
-| `AUTH_SECRET` | *long random string* | Signs sign-in sessions. Generate one with `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"` |
-| `CORS_ORIGIN` | `https://your-site.com` | Optional; only needed if the website is hosted on a different domain |
+Open the local URL displayed by Vite, usually:
 
-Never commit `.env`. It is already in `.gitignore`.
-
-## The hour-14 data update
-
-At hour 14 an updated version of one dataset file is released (same columns, same format). To load it:
-
-1. Sign in as **Medical Superintendent** or **Shift Manager** and open **Data**.
-2. Click **Upload update** on the row of the file that changed and choose the new CSV.
-   - The file is checked first. If its columns differ, nothing changes and the reason is shown.
-3. Set **Snapshot time** to `2026-11-16 14:00` and click **Save time**.
-4. The page lists exactly what changed: new, changed and cleared issues, and the key figures.
-   - Proposals the new data no longer supports are withdrawn.
-   - Decisions already made (approved, done, rejected) are kept.
-   - **Restore original dataset** puts the original files back.
-
-## How it works
-
-```mermaid
-flowchart LR
-  CSV[9 CSV files] -->|seed / upload| DB[(MongoDB)]
-  DB --> AG[agent.js<br/>Observe · Reason · Evaluate · Decide]
-  AG --> SNAP[(Snapshot)]
-  AG --> ACT[(Actions)]
-  AG --> PAT[(Waiting patients)]
-  SNAP --> API[Express API<br/>roles · audit log]
-  ACT --> API
-  PAT --> API
-  API --> UI[React screens]
-  UI -->|approve / reject / assess / upload| API
+```text
+http://localhost:5173
 ```
 
-- **`dataset.js`**: the nine files, a CSV reader (quotes, commas, line breaks), and column checks for uploads.
-- **`agent.js`**: pure functions with no database access.
-  - `observe()` builds wards, discharges, overdue tests, waits, doctors, rosters and late clinic hours.
-  - `reason()` runs one rule per kind of problem. A rule reports an issue only when the data supports it.
-  - `run()` ranks the issues and prepares everything the screens show.
-- **`store.js`**: loads files from MongoDB, runs the agent, saves the snapshot, keeps proposed actions and data-sourced patients in step with the data, and reports what changed.
-- **Patient triage**: `design-triage.js` holds the original danger-sign rules. `triage.js` is a wider engine used as a safety net. It understands everyday wording, typos, negation, NEWS2 and children's age bands, and it can only raise a category, never lower it. Every category is confirmed or changed by a nurse or doctor.
+### 🔐 Login
 
-## API
+Use the application's login screen and provide the requested staff information and role.
 
-All responses are `{ ok: true, data }` or `{ ok: false, error: { message, field } }`. Everything except health, roles and sign-in needs `Authorization: Bearer <token>`.
+Use only test or synthetic data while demonstrating the project.
 
-| Method | Path | Purpose |
-|---|---|---|
-| GET | `/api/health` | Health check (used by Docker and Render) |
-| POST | `/api/auth/signin` | Sign in with `{ name, email, staffId, role }` |
-| GET | `/api/overview` | Headline, figures, ranked issues, departments |
-| GET | `/api/issues` | Issues with cause chain, options, actions, evidence |
-| GET · PATCH | `/api/actions` · `/api/actions/:code` | Action queue and audit log · approve / reject / done |
-| GET · POST · PATCH | `/api/patients` · `/api/patients/:id` | Queue · register · confirm or change (with reason) |
-| POST | `/api/triage/preview` | Live assessment while typing |
-| GET | `/api/beds`, `/api/diagnostics-staff`, `/api/complaints` | Screen data |
-| GET | `/api/data` | Dataset files and snapshot time |
-| PUT | `/api/data/files/:name` | Replace a file (body is the CSV text, `Content-Type: text/csv`) |
-| PUT | `/api/data/snapshot-time` | `{ "value": "2026-11-16 14:00" }`, or empty for automatic |
-| POST | `/api/data/reset` · `/api/demo/reset` | Restore original files · full demo reset |
+## 🧪 Testing
 
-## Tests
+Run the backend tests:
 
 ```bash
 cd server
-npm test                                          # 32 unit tests: agent on the dataset, update scenarios, triage rules
-BASE_URL=http://localhost:4000 npm run test:api   # 38 end-to-end API checks (server must be running)
+npm test
 ```
 
-The unit tests cover:
-- the planted problems and the ranking
-- an "hour-14" update where the MRI reports arrive
-- an update that clears the emergency department
-- a doctor going on leave
-- the CSV reader and column checks
+To run the API smoke tests, first ensure the backend is running, then execute:
 
-GitHub Actions (`.github/workflows/ci.yml`) runs both suites against a real MongoDB 7 on every push. It also builds the website and the Docker image.
-
-## Deployment
-
-1. Create a free **MongoDB Atlas** cluster and copy its connection string.
-2. On **Render**, choose **New → Blueprint**, pick this repository, and paste the connection string as `MONGO_URI`.
-3. `render.yaml` builds the Dockerfile, generates `AUTH_SECRET`, checks `/api/health` and redeploys on every push to `main`.
-
-## Project structure
-
-```
-sanjeevani-ops/
-├── server/
-│   ├── agent.js           # Observe → Reason → Evaluate → Decide → Act → Explain
-│   ├── dataset.js         # the 9 files, CSV reader, column checks
-│   ├── store.js           # MongoDB, agent re-runs, actions and patients kept in step
-│   ├── index.js           # Express API, role checks, audit log
-│   ├── auth.js            # sign-in and signed sessions
-│   ├── config.js          # roles, screens, approval rights
-│   ├── assess.js · design-triage.js · triage.js   # patient triage
-│   ├── models.js · seed.js
-│   ├── data/original/     # the hospital dataset (CSV) + DATASET.md
-│   └── test/              # agent, triage and API tests
-├── client/
-│   └── src/
-│       ├── pages/         # Overview, Triage, Issues, Actions, Beds, Diag, Complaints, Data, Login
-│       ├── ui.jsx · api.js · App.jsx
-│       └── styles.css
-├── Dockerfile · docker-compose.yml · render.yaml
-└── .github/workflows/ci.yml
+```bash
+npm run test:api
 ```
 
-## Safety and limits
+## 🚀 Future Enhancements
 
-- **Fictional data only:** no real patient information.
-- **Decision support, not diagnosis:** no prescriptions or treatment advice.
-- **Nothing happens automatically:** no patient transfers, staff moves or bed releases. Staff confirm a bed is ready before it is reallocated.
-- **Every action needs approval from an authorised role,** and every decision is written to the audit log.
-- **Transparent rules:** the agent uses rules you can read in `agent.js`. It does not claim a language model makes these decisions.
+- Real-time bed and resource availability updates.
+- Predictive analytics for patient waiting times.
+- Improved coordination between departments.
+- Notifications for delayed diagnostic reports and discharges.
+- Enhanced operational dashboards and performance reports.
+- Integration with authorized hospital information systems.
+- Secure cloud deployment with appropriate access controls.
+
+## 🔒 Safety and Privacy
+
+This project is intended for operational decision support and demonstration purposes. Recommendations must be reviewed and approved by authorized hospital staff.
+
+The system is not a substitute for clinical judgment and must not independently diagnose patients, prescribe treatment, move patients, or release beds.
+
+The included datasets are intended for demonstration. Real patient information must not be uploaded to a public repository.
+
+## 👥 Team
+
+**Project Name:** Sanjeevani Hospital Operations Agent
+
+**Hackathon Challenge:** The Blocked Bed
+
+**Event:** CYPHER 2026
+
+**Team Members:** Add your team members' names here.
+
+## 📄 License
+
+Add an appropriate open-source license if you intend to distribute this project publicly.
 
 ---
 
-**Team:** [Team name] · [Member names] · CYPHER 2026
+**Sanjeevani — Helping hospital teams understand operational bottlenecks and make better-informed decisions.**
